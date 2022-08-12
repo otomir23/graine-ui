@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .toggle:after {
+        content: '';
+    }
+
+    input:checked + .toggle:after {
+        transform: translateX(100%);
+    }
+
+    input:checked + .toggle {
+        @apply bg-gray border-gray;
+    }
+
+    *::-webkit-scrollbar {
+        @apply w-2;
+    }
+    *::-webkit-scrollbar-track {
+        @apply bg-background;
+    }
+    *::-webkit-scrollbar-thumb {
+        @apply bg-border rounded-full;
+    }
+}
