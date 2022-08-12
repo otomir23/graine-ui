@@ -98,6 +98,10 @@ const App = () => {
                     hey look, Lois, I'm in a wrapper!
                 </InputWrapper>
                 <Toggle id={'toggle'} label={"Toggle is currently wip and looks pretty bad. Also it doesnt support light theme. Yeah."} />
+                <Skeleton><div style={{
+                    width: '16rem',
+                    height: '9rem',
+                }} /></Skeleton>
             </div>
             <span style={{
                 position: 'fixed',
