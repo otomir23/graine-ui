@@ -24,4 +24,9 @@
     *::-webkit-scrollbar-thumb {
         @apply bg-border rounded-full;
     }
+
+    input[type=range].range::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        @apply bg-current h-2 w-2 rounded-full;
+    }
 }

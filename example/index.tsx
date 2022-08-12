@@ -1,7 +1,7 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {Button, darkTheme, defaultTheme, Input, ThemeProvider, useFormField, Select, Skeleton, Spinner, InputWrapper, Toggle} from '../.';
+import {Button, darkTheme, defaultTheme, Input, ThemeProvider, useFormField, Select, Skeleton, Spinner, InputWrapper, Toggle, Range} from '../.';
 
 const App = () => {
     const [loading, setLoading] = React.useState(false);
@@ -37,6 +37,12 @@ const App = () => {
             required: true,
         }
     });
+    const rangeField = useFormField({
+        id: "range",
+        label: "Amount of y",
+        validation: {
+        }
+    })
     const clickHandler = () => {
         setLoading(true);
         setTimeout(() => {
@@ -97,12 +103,14 @@ const App = () => {
                 <InputWrapper label={"Peter Griffin"} id={"pt-gf"}>
                     hey look, Lois, I'm in a wrapper!
                 </InputWrapper>
+                <Range {...rangeField} />
                 <Toggle id={'toggle'} label={"Toggle is currently wip and looks pretty bad. Also it doesnt support light theme. Yeah."} />
                 <Skeleton><div style={{
                     width: '16rem',
                     height: '9rem',
                 }} /></Skeleton>
             </div>
+
             <span style={{
                 position: 'fixed',
                 bottom: '1rem',
